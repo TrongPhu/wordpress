@@ -1,0 +1,8 @@
+{
+    "require": {
+        "league/flysystem-sftp": "^1.0",
+		"league/flysystem-aws-s3-v3": "^1.0",
+		"spatie/flysystem-dropbox": "1.2.2",
+		"superbalist/flysystem-google-storage": "7.2.2"
+    }
+}
