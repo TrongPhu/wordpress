@@ -182,4 +182,4 @@ if( nbdesigner_get_option( 'nbdesigner_disable_nonce', 'no' ) == 'yes' ){
 }else{
     nbd_define( 'NBDESIGNER_ENABLE_NONCE', TRUE );
 }
-do_action( 'nbd_loaded' );
+do_action( 'nbd_loaded' ); //plugin loading
