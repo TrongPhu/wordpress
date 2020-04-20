@@ -15,7 +15,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
         <?php get_sidebar('left'); ?>
-		<main id="main" class="site-main" role="main" style="width: 60%;float: left;margin-left: 20%;">
+		<main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) :
 

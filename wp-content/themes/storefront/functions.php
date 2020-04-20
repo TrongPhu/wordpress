@@ -67,18 +67,76 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
 	}
 }
 
-add_action('widgets_init','add_left_sidebar');
+//add_action('widgets_init', 'add_left_sidebar');
+//
+//function add_left_sidebar()
+//{
+//    register_sidebar(array(
+//        'name' => 'sidebar-left',
+//        'before_widget' => '<div class="sidebar-box">',
+//        'after_widget' => '</div>',
+//        'before_title' => '<div class="widget-title">',
+//        'after_title' => '</div>'
+//    ));
+//}
 
-function add_left_sidebar(){
-    register_sidebar(array(
-        'name' => 'sidebar-left',
-        'before_widget' => '<div class="sidebar-box">',
-        'after_widget' => '</div>',
-        'before_title' => '<div class="widget-title">',
-        'after_title' => '</div>'
-    ));
-}
 /**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
+
+// Test shortcode
+function button_function($type)
+{
+    extract(shortcode_atts(array(
+        'type' => 'type'
+    ), $type));
+
+    // check what type user entered
+    switch ($type) {
+        case 'twitter':
+            return '<li><a href="http://twitter.com/filipstefansson" class="twitter-button">Follw me on Twitter!</a></li>';
+            break;
+        case 'rss':
+            return '<li><a href="http://example.com/rss" class="rss-button">Subscribe to the feed!</a></li>';
+            break;
+    }
+}
+
+function register_button_shortcode()
+{
+    add_shortcode('button', 'button_function');
+}
+
+add_action('init', 'register_button_shortcode');
+
+
+function get_all_post_incat($category_name)
+{
+
+    extract(shortcode_atts(array(
+        'name' => 'name'
+    ), $category_name['name']));
+
+    $cat_name = $category_name['name'];
+
+    $category_id = get_cat_ID($cat_name);
+
+    $catquery = new WP_Query('cat=' . $category_id . '&posts_per_page=5');
+
+    while ($catquery->have_posts()) :
+        $catquery->the_post();
+        ?>
+        <li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
+        <?php
+        wp_reset_postdata();
+    endwhile;
+
+}
+
+function register_post_by_category()
+{
+    add_shortcode('category', 'get_all_post_incat');
+}
+
+add_action('init', 'register_post_by_category');
