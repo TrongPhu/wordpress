@@ -48,11 +48,6 @@ if(!class_exists('NB_ADMIN_PRODUCT_BUILDER')){
 
                 $nb_product_builder = new NB_Productbuilder_List_Table();
 
-                echo "<pre>";
-                print_r($nb_product_builder);
-                echo "<pre>";
-                die();
-
                 include_once( NBDESIGNER_PLUGIN_DIR . 'views/canvas-builder/canvas-builder-list-table.php' );
             }
         }
@@ -107,8 +102,9 @@ if(!class_exists('NB_ADMIN_PRODUCT_BUILDER')){
             if( $hook == 'nbdesigner_page_nb_product_builder' ){
                 wp_register_script('fabricjs', NBDESIGNER_JS_URL . 'fabric.js', array(), NBDESIGNER_VERSION);
                 wp_register_style('nbd_options', NBDESIGNER_CSS_URL . 'admin-options.css', array('wp-color-picker'), NBDESIGNER_VERSION);
+                wp_register_style('woocommerce-byd-layout', NBDESIGNER_CSS_URL . 'woocommerce-byd-layout.css', array('wp-color-picker'), NBDESIGNER_VERSION);
                 wp_enqueue_script('nbd_options', NBDESIGNER_JS_URL . 'canvas-builder.js', array('jquery', 'jquery-ui-resizable', 'jquery-ui-draggable', 'jquery-ui-datepicker', 'jquery-ui-autocomplete', 'wp-color-picker', 'angularjs', 'wc-enhanced-select'), NBDESIGNER_VERSION);
-                wp_enqueue_style(array('wp-jquery-ui-dialog', 'wp-color-picker', 'nbd_options'));
+                wp_enqueue_style(array('wp-jquery-ui-dialog', 'wp-color-picker', 'nbd_options','woocommerce-byd-layout'));
                 wp_enqueue_script(array('wpdialogs', 'nbd_options','fabricjs'));
             }
         }

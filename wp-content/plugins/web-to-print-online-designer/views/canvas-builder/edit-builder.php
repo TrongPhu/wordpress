@@ -1,6 +1,17 @@
 <div class="main ">
-    <div class="canvas-container">
-        <canvas id="canvas" class="lower-canvas" width="774" height="516" style="position: absolute; width: 774px; height: 516px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+    <div class="byd-configurator-wrap">
+        <div class="byd-configurator">
+            <div class="byd-configurator-product">
+                <div class="byd-configurator-canvas">
+                    <div class="canvas-container">
+                        <canvas id="canvas" class="lower-canvas" width="774" height="516" style="position: absolute; width: 774px; height: 516px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="byd-configurator-options">
+
+        </div>
     </div>
     <div class="byd-configurator-wrap">
         <div class="right">
