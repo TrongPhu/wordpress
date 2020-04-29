@@ -137,6 +137,7 @@ if ( ! empty( $_GET['page'] ) ) {
     }
 }
 require_once( NBDESIGNER_PLUGIN_DIR . 'includes/options/admin-options.php' );
+require_once( NBDESIGNER_PLUGIN_DIR . 'includes/product-builder/product-builder.php');
 require_once( NBDESIGNER_PLUGIN_DIR . 'includes/options/frontend-options.php' );
 //require_once( NBDESIGNER_PLUGIN_DIR . 'includes/class.cuz.php' );
 

@@ -3282,6 +3282,7 @@ function nbd_admin_pages(){
         'admin_page_nbdesigner_detail_order',
         'nbdesigner_page_nbd_support',
         'nbdesigner_page_nbd_printing_options',
+        'nbdesigner_page_nb_product_builder',
         'edit-template_tag'
     ));
 }
