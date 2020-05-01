@@ -508,6 +508,7 @@ li.product.product-type-byd_configurator:hover:after {
 }
 
 .canvas-container {
+    border: solid 1px #000000;
     opacity: 1;
     left: 0;
     transition: opacity 0.1s cubic-bezier(0.39, 0.98, 0.69, 1);
